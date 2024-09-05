@@ -9,11 +9,13 @@ const articlesData = articles
   .map((article) => {
     const { title, date, length, snippet } = article;
     //   format date
+    const formateDate = moment(date).format("MMMM DD, YYYY");
 
-    return `<article class="post">
+    return `
+      <article class="post">
         <h2>${title}</h2>
         <div class="post-info">
-          <span>${date}</span>
+          <span>${formateDate}</span>
           <span>${length} min read</span>
         </div>
         <p>
